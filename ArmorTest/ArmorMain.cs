@@ -18,18 +18,14 @@ namespace ArmorTest
         public ArmorTest(OnixPluginInitInfo initInfo) : base(initInfo)
         {
             Instance = this;
-            // If you can clean up what the plugin leaves behind manually, please do not unload the plugin when disabling.
+            
             base.DisablingShouldUnloadPlugin = false;
-#if DEBUG
-            // base.WaitForDebuggerToBeAttached();
-#endif
         }
 
         protected override void OnLoaded()
         {
             Config = new ArmorTestConfig(PluginDisplayModule);
             Onix.Events.Common.HudRenderGame += Common_HudRender;
-            Console.WriteLine($"Plugin {CurrentPluginManifest.Name} loaded!");
         }
 
         private static void Common_HudRender(RendererGame gfx, float delta)
@@ -98,7 +94,6 @@ namespace ArmorTest
                             break;
                         }
                     case HotbarSide.Center:
-                        // No end caps for center slot
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
@@ -112,9 +107,6 @@ namespace ArmorTest
 
         protected override void OnUnloaded()
         {
-            Console.WriteLine($"Plugin {CurrentPluginManifest.Name} Unloaded!");
-            // Ensure every task or thread is stopped when this function returns.
-            // You can give them base.PluginEjectionCancellationToken which will be cancelled when this function returns. 
         }
     }
 }

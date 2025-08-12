@@ -1,0 +1,13 @@
+{
+  "uuid": "8def75be-5f7c-47e7-85a2-e26f7a522ac4",
+  "plugin_name": "Hotbar Armor HUD",
+  "plugin_author": "BunnyDaCutie",
+  "plugin_description": "Armor HUD except it’s next to the hotbar.",
+  "plugin_version": "1.0.0",
+  "game_version": "1.21.82",
+  "supported_game_version_ranges": [
+    "0.0.0-9.99.9"
+  ],
+  "runtime_version": 3,
+  "target_assembly": "ArmorHotbar.dll"
+}
